@@ -1,0 +1,19 @@
+﻿{
+  "twitch": {
+    "username/channel": "",
+    "oauth": "oauth:",
+    "prefijoRobot": "◀ :) ▶",
+    "habilitarBot": false
+  },
+  "youtube": {
+    "channelId": "",
+    "apiKey": "",
+    "milisegundosIntervalo": 5000
+  },
+  "baseDeDatos": {
+    "ip": "localhost",
+    "nombreBaseDatos": "",
+    "usuario": "",
+    "password": ""
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "twitch": {
+    "username/channel": Nombre del canal de Twitch (https://www.twitch.tv/(LO QUE SALE AQUÍ)). (string)
+    "oauth": Se obtiene en http://twitchapps.com/tmi y tiene el formato oauth:1234abcde... (string)
+    "prefijoRobot": El prefijo que tendrán los mensajes que el bot escriba en el chat. (string)
+  },
+  "youtube": {
+    "channelId": Se obtiene accediendo al canal de youtube que realiza el directo
+                 (https://www.youtube.com/channel/(LO QUE SALE AQUÍ)). (string)
+    "apiKey": Se obtiene en https://console.developers.google.com. Hay que crear una nueva
+              aplicación, agregarle la API de youtube y generar una nueva clave. (string)
+    "milisegundosIntervalo": El intervalo de tiempo en milisegundos en el que el programa hará
+                             una llamada a youtube para obtener los comentarios. (int)
+  },
+  "baseDeDatos": {
+      "ip": La IP o host donde está la base de datos. (string)
+      "nombreBaseDatos": El nombre de la base de datos a utilizar. (string)
+      "usuario": Nombre del usuario de autenticación. (string)
+      "password": Contraseña de autenticación. (string)
+    }
+}

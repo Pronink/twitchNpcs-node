@@ -1,0 +1,21 @@
+{
+  "name": "twitchirc",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ismael García Torres",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^1.4.0",
+    "mariadb": "^2.0.1-beta",
+    "twitch-bot": "^1.2.5",
+    "youtube-live-chat": "github:qwazwsx/youtube-live-chat"
+  },
+  "devDependencies": {
+    "@types/cli-color": "^0.3.29"
+  }
+}
