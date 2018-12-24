@@ -15,30 +15,13 @@ function guardarMensaje(usuarioNombreFantasia, usuarioId, mensaje, esModerador, 
         let y = parseInt(mensajeTroceado[1]); //| => Quita los decimales
         let z = parseInt(mensajeTroceado[2]); ///
         let mensajeTexto = mensajeTroceado.slice(3).join(' '); // Retiro las coordenadas del mensaje
-        if (y > 0 && y <= 256 && // Verifica que el eje y no sea menor o igual a cero ni mayor a 256
+        if (y > 0 && y <= 256 && // Verifica que el eje 'y' no sea menor o igual a cero ni mayor a 256
             Number.isSafeInteger(x) && //\
             Number.isSafeInteger(y) && //| => Verifica que no es NaN ni excede el tamaño de memoria
             Number.isSafeInteger(z) && ///
             mensajeTexto.length < 200 // El mensaje en la base de datos es VARCHAR(200)
         ) {
             db.nuevoMensaje(usuarioNombreFantasia, usuarioId, plataforma, esModerador, esSuscriptor, mensajeTexto, x, y, z); // Guardar el mensaje en la base de datos
-            if (plataforma === Plataforma.twitch){
-                twitch.decir('Hola ' + usuarioNombreFantasia + ' ! Tu comentario ha sido guardado y será mostrado dentro del mundo de Minecraft en breve!');
-            }
-        } else if (plataforma === Plataforma.twitch) {
-            if (y <= 0 || y > 256) { // Errores
-                twitch.decir('Hola ' + usuarioNombreFantasia + ' ! No puedes introducir un número menor o igual a 0 ni mayor a 256 en el eje Y de Minecraft. Inténtelo de nuevo!');
-            } else if (mensajeTexto.length >= 200) {
-                twitch.decir('Hola ' + usuarioNombreFantasia + ' ! No puedes introducir un mensaje de más de 200 caracteres. Inténtelo de nuevo!');
-            } else if (
-                !Number.isSafeInteger(x) || //\
-                !Number.isSafeInteger(y) || //| => Verifica que no es NaN ni excede el tamaño de memoria
-                !Number.isSafeInteger(z))   ///
-            {
-                twitch.decir('Hola ' + usuarioNombreFantasia + ' ! No puedes introducir números tan grandes para las coordenadas. Inténtelo de nuevo!');
-            } else {
-                twitch.decir('Hola ' + usuarioNombreFantasia + ' ! Ha ocurrido un error al tratar tu mensaje. Inténtelo de nuevo!');
-            }
         }
     }
 }

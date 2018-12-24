@@ -4,7 +4,6 @@ const TwitchBot = require('twitch-bot');
 const clavesTwitch = require('./../utilidades/utilidadesArchivos').obtenerClaves()['twitch'];
 let conectadoConTwitch = false;
 let prefijoRobot = clavesTwitch['prefijoRobot'];
-let robotHabilitado = clavesTwitch['habilitarBot'];
 
 console.log(Color.magenta('[TWITCH] Conectando con twitch...'));
 const bot = new TwitchBot({
@@ -29,16 +28,7 @@ bot.on('error', err => {
 
 let conectorTwitch = {
     onMensaje: (usuarioNombreFantasia, usuarioId, mensaje, esModerador, esSuscriptor) => {
-    }/*,
-    decir: (mensaje) => {
-        if (robotHabilitado){
-            if (conectadoConTwitch) {
-                bot.say(prefijoRobot + ' ' + mensaje);
-            } else {
-                console.log(Color.red('[TWITCH] No se ha podido enviar el mensaje a twitch porque no hay una conexión establecida'))
-            }
-        }
-    }*/
+    }
 };
 
 module.exports = conectorTwitch;
