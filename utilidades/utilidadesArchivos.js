@@ -11,4 +11,3 @@ module.exports = {
         return objeto;
     }
 };
-let claves = ['baseDeDatos'];
